@@ -1,0 +1,42 @@
+<div class="card">
+  <div class="card-header bg-dark text-white">Quản Lý Sản Phẩm</div>
+  <div class="card-body">
+    <div class="m-5 product">
+        <div class="form-group">
+          <label>Mã sản phẩm</label>
+          <input type="text" class="form-control" #maSanPham>
+        </div>
+        <div class="form-group">
+          <label>Tên sản phẩm</label>
+          <input type="text" class="form-control" #tenSanPham>
+        </div>
+        <div class="form-group">
+          <label>Giá</label>
+          <input type="text" class="form-control" #giaSanPham>
+        </div>
+        <button class="btn btn-success" (click)="ThemSanPham(maSanPham.value, tenSanPham.value, giaSanPham.value)">Thêm sản phẩm</button>
+    </div>
+  </div> 
+  <div class="card-footer">
+    <div class="m-5 list">          
+      <table class="table">
+        <thead>
+          <tr class="text-white bg-dark">
+            <th>STT</th>
+            <th>Mã SP</th>
+            <th>Tên SP</th>
+            <th>Giá</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let item of danhsachsanpham; let STT = index">
+          <tr>
+            <td>{{STT+1}}</td>
+            <td>{{item.tenSanPham}}</td>
+            <td>{{item.maSanPham}}</td>
+            <td>{{item.giaSanPham}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
