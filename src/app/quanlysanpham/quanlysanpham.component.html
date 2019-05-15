@@ -29,7 +29,7 @@
           </tr>
         </thead>
         <tbody *ngFor="let item of danhsachsanpham; let STT = index">
-          <tr>
+          <tr [ngClass]="{'bg-row': (STT+1)%2 === 0}">
             <td>{{STT+1}}</td>
             <td>{{item.tenSanPham}}</td>
             <td>{{item.maSanPham}}</td>
